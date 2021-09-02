@@ -5,7 +5,7 @@ import ru.netology.domain.MoviesInfo;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class MoviesManagerTest{
+class MoviesManagerTest {
     MoviesInfo first = new MoviesInfo(1, "Бладшот", "боевик", "https://github.com/netology-code/javaqa-homeworks/blob/master/dependency/pic/afisha.png?raw=true");
     MoviesInfo second = new MoviesInfo(2, "Вперёд", "мультфильм", "https://github.com/netology-code/javaqa-homeworks/blob/master/dependency/pic/afisha.png?raw=true");
     MoviesInfo third = new MoviesInfo(3, "Отель Белград", "комедия", "https://github.com/netology-code/javaqa-homeworks/blob/master/dependency/pic/afisha.png?raw=true");
@@ -39,6 +39,7 @@ class MoviesManagerTest{
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldListOfTenMovies() {
         MoviesManager manager = new MoviesManager();
@@ -55,10 +56,11 @@ class MoviesManagerTest{
         manager.add(theEleventh);
 
         MoviesInfo[] actual = manager.getAll();
-        MoviesInfo[] expected = new MoviesInfo[]{theEleventh,tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second};
+        MoviesInfo[] expected = new MoviesInfo[]{theEleventh, tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second};
 
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldMore10Movies() {
         MoviesManager manager = new MoviesManager(10);
@@ -76,13 +78,14 @@ class MoviesManagerTest{
         manager.add(theEleventh);
 
 
-        MoviesInfo[] expected = new MoviesInfo[]{theEleventh,tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second};
+        MoviesInfo[] expected = new MoviesInfo[]{theEleventh, tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second};
 
         MoviesInfo[] actual = manager.getLast10Movies();
 
         assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldIn10Movies() {
         MoviesManager manager = new MoviesManager(10);
@@ -99,13 +102,14 @@ class MoviesManagerTest{
         manager.add(tenth);
 
 
-        MoviesInfo[] expected = new MoviesInfo[]{tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second,first};
+        MoviesInfo[] expected = new MoviesInfo[]{tenth, ninth, the8th, seventh, sixth, fifth, fourth, third, second, first};
 
         MoviesInfo[] actual = manager.getLast10Movies();
 
         assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldInLess10Movies() {
         MoviesManager manager = new MoviesManager(10);
@@ -120,12 +124,11 @@ class MoviesManagerTest{
         manager.add(the8th);
 
 
-
-        MoviesInfo[] expected = new MoviesInfo[]{the8th, seventh, sixth, fifth, fourth, third, second,first};
+        MoviesInfo[] expected = new MoviesInfo[]{the8th, seventh, sixth, fifth, fourth, third, second, first};
 
         MoviesInfo[] actual = manager.getLast10Movies();
 
         assertArrayEquals(expected, actual);
 
     }
-    }
+}

@@ -1,9 +1,10 @@
 package ru.netology.manager;
 
 import ru.netology.domain.MoviesInfo;
+
 public class MoviesManager {
     private MoviesInfo[] movies = new MoviesInfo[0];
-    private int numbersOfMovies=10;
+    private int numbersOfMovies = 10;
 
     public MoviesManager(int numbersOfMovies) {
         this.numbersOfMovies = numbersOfMovies;
@@ -34,6 +35,7 @@ public class MoviesManager {
         }
         return result;
     }
+
     public MoviesInfo[] getLast10Movies() {
         int resultLength;
         if (movies.length < numbersOfMovies) {
